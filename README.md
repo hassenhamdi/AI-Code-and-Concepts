@@ -33,6 +33,11 @@ A deep dive into the architecture of modern latent diffusion models. This sectio
 
 ---
 
+## Repository Stats ⭐
+
+[![Star History Chart](https://api.star-history.com/svg?repos=hassenhamdi/AI-Code-and-Concepts&type=Date)](https://star-history.com/#hassenhamdi/AI-Code-and-Concepts&Date)
+
+---
 
 ## Contributing
 
