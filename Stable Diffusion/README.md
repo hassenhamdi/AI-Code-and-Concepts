@@ -13,23 +13,19 @@ The text-to-image synthesis process is a deterministic, multi-stage pipeline inv
 
 ```mermaid
 graph TD
-    A[<B>Text Prompt</B><br/>&quot;a cat in a hat&quot;] -->|1. CLIP Text Encoder| B(<b>Context Vectors</b><br/>Numerical representation);
-    C[<B>Random Noise</B><br/>Latent Tensor] -->|2. Denoising Loop| D{<b>Iterative Denoising</b><br/>Sampler + Scheduler};
-    B --> D;
-    D -- U-Net Prediction --> D;
-    D --> E(<b>Clean Latent</b><br/>Final Representation);
-    E -->|3. VAE Decoder| F([<B>Final Image</B>]);
-
-    subgraph "Act I: Prompt Encoding"
-        A; B;
+    subgraph Act I: Prompt Encoding
+        A[<B>Text Prompt</B><br/>&quot;a cat in a hat&quot;] -->|1. CLIP Text Encoder| B(<b>Context Vectors</b><br/>Numerical representation);
     end
 
-    subgraph "Act II: Latent Diffusion"
-        C; D; E;
+    subgraph Act II: Latent Diffusion
+        C[<B>Random Noise</B><br/>Latent Tensor] -->|2. Denoising Loop| D{<b>Iterative Denoising</b><br/>Sampler + Scheduler};
+        B --> D;
+        D -- U-Net Prediction --> D;
+        D --> E(<b>Clean Latent</b><br/>Final Representation);
     end
 
-    subgraph "Act III: Image Decoding"
-        F;
+    subgraph Act III: Image Decoding
+      E -->|3. VAE Decoder| F([<B>Final Image</B>]);
     end
 ```
 
