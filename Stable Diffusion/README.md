@@ -10,9 +10,10 @@ The goal is to offer a clear, educational resource for engineers, researchers, a
 
 The text-to-image synthesis process is a deterministic, multi-stage pipeline involving several key components.
 
+
 ```mermaid
 graph TD
-    A[<B>Text Prompt</B><br/>"a cat in a hat"] -->|1. CLIP Text Encoder| B(<b>Context Vectors</b><br/>Numerical representation);
+    A[<B>Text Prompt</B><br/>&quot;a cat in a hat&quot;] -->|1. CLIP Text Encoder| B(<b>Context Vectors</b><br/>Numerical representation);
     C[<B>Random Noise</B><br/>Latent Tensor] -->|2. Denoising Loop| D{<b>Iterative Denoising</b><br/>Sampler + Scheduler};
     B --> D;
     D -- U-Net Prediction --> D;
@@ -31,6 +32,7 @@ graph TD
         F;
     end
 ```
+
 
 ## 🛠️ Core Components & Techniques
 
